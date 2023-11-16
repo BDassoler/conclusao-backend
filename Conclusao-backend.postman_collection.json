@@ -1,0 +1,531 @@
+{
+	"info": {
+		"_postman_id": "f939ba75-a92b-4702-8742-1d7a40d88c55",
+		"name": "Conclusao-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29131667"
+	},
+	"item": [
+		{
+			"name": "clientes/carregar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/clientes/carregar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes",
+						"carregar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "produtos/carregar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/produtos/carregar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos",
+						"carregar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pedidos/carregar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pedidos/carregar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidos",
+						"carregar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pedidos/carregar/id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pedidos/carregar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidos",
+						"carregar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pedidosItens/carregar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pedidosItens/carregar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidosItens",
+						"carregar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "enderecos/carregar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/enderecos/carregar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enderecos",
+						"carregar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "clientes/criar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Cristiano\",\r\n    \"sobrenome\": \"Fenomeno\",\r\n    \"email\": \"teste@teste.com.br\",\r\n    \"dataNascimento\": \"2000-04-01\",\r\n    \"telefone\": \"48991451905\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/clientes/criar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes",
+						"criar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "produtos/criar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"XIOMI\",\r\n    \"descricao\": \"CELULAR\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/produtos/criar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos",
+						"criar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pedidos/criar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dataCriacao\": null,\r\n    \"dataEntrega\": \"2023-11-15\",\r\n    \"valorDesconto\": 15,\r\n    \"clienteId\": 1,\r\n    \"enderecoId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pedidos/criar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidos",
+						"criar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "enderecos/criar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rua\": \"TEste\",\r\n    \"bairro\": \"Centro\",\r\n    \"cidade\": \"Criciúma\",\r\n    \"estado\": \"SC\",\r\n    \"clienteId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/enderecos/criar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enderecos",
+						"criar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pedidosItens/criar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"produtoId\": 1,\r\n    \"quantidade\": 2,\r\n    \"valorUnitario\": 30,\r\n    \"pedidoId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pedidosItens/criar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidosItens",
+						"criar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "clientes/atualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"id\": 1,\r\n        \"nome\": \"maria\",\r\n        \"sobrenome\": \"Dassoler\",\r\n        \"dataNascimento\": \"2000-10-30\",\r\n        \"telefone\": \"48999082342\",\r\n        \"email\": \"email@teste.com\",\r\n        \"enderecos\": null\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/clientes/atualizar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes",
+						"atualizar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "produtos/atualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"nome\": \"violão\",\r\n        \"descricao\": \"Fender\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/produtos/atualizar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos",
+						"atualizar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pedidos/atualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 1,\r\n        \"dataCriacao\": \"2023-11-16\",\r\n        \"dataEntrega\": \"2023-11-15\",\r\n        \"valorDesconto\": 15.00,\r\n        \"clienteId\": 1,\r\n        \"enderecoId\": 1,\r\n        \"pedidosItens\": null,\r\n        \"valorTotal\": null\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pedidos/atualizar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidos",
+						"atualizar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pedidosItens/atualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"produtoId\": 1,\r\n    \"quantidade\": 2,\r\n    \"valorUnitario\": 55,\r\n    \"pedidoId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pedidosItens/atualizar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidosItens",
+						"atualizar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "enderecos/atualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rua\": \"James Bond\",\r\n    \"bairro\": \"comerciário\",\r\n    \"cidade\": \"Criciúma\",\r\n    \"estado\": \"SC\",\r\n    \"clienteId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/enderecos/atualizar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enderecos",
+						"atualizar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "clientes/deletar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/clientes/deletar/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes",
+						"deletar",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "produtos/deletar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/produtos/deletar/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos",
+						"deletar",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pedidos/deletar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pedidos/deletar/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidos",
+						"deletar",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pedidosItens/deletar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pedidosItens/deletar/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedidosItens",
+						"deletar",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "enderecos/deletar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/enderecos/deletar/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enderecos",
+						"deletar",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

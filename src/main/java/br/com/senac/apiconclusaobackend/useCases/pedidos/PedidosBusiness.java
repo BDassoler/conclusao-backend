@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface PedidosBusiness {
     List<PedidosResponseDom> carregarPedidos();
-    PedidosResponseDom carregarPedidoEntidade(Long id);
+    PedidosResponseDom carregarPedidoEntidade(Long id)throws SenacException ;
     PedidosResponseDom criarPedido(PedidosRequestDom pedidosRequestDom) throws SenacException;
     PedidosResponseDom atualizarPedido(Long id, PedidosRequestDom pedido) throws SenacException;
     void deletarPedido(Long id);

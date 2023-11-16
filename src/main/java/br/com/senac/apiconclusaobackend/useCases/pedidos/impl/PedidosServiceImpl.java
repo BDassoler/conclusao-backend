@@ -21,7 +21,7 @@ public class PedidosServiceImpl implements PedidosService {
     }
 
     @Override
-    public PedidosResponseDom carregarPedidoById(Long id) {
+    public PedidosResponseDom carregarPedidoById(Long id) throws SenacException  {
         return pedidosBusiness.carregarPedidoEntidade(id);
     }
 

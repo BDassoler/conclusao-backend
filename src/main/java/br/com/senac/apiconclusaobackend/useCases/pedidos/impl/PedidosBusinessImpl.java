@@ -47,20 +47,33 @@ public class PedidosBusinessImpl implements PedidosBusiness {
     }
 
     @Override
-    public PedidosResponseDom carregarPedidoEntidade(Long id) {
+    public PedidosResponseDom carregarPedidoEntidade(Long id) throws SenacException  {
 
-        var pedido = pedidosRepository.findById(id).get();
-        var pedidosItensList = pedidosItensRepository.carregarPedidoItensByPedidoId(id);
+        Optional<Pedidos> optionalPedidos = pedidosRepository.findById(id);
 
-        PedidosResponseDom out = PedidosMapper.pedidosTopedidosResponseDom(pedido);
+        if(!optionalPedidos.isPresent()) {
+            throw new SenacException("Pedido não encontrado");
+        }
+        Pedidos pedidos = optionalPedidos.get();
+        List<PedidosItens> pedidosItensList = pedidosItensRepository.carregarPedidoItensByPedidoId(id);
+        PedidosResponseDom out = PedidosMapper.pedidosTopedidosResponseDom(pedidos);
 
-       List<PedidosItensResponseDom> pedItensRespDom = pedidosItensList
-                .stream()
-                .map(PedidosItensMapper::pedidosItensToPedidosItensResponseDom)
-                .collect(Collectors.toList());
+        double valorTotal = 0;
 
-        out.setPedidosItens(pedItensRespDom);
+        var pedidosItensResponseDom = new ArrayList<PedidosItensResponseDom>();
 
+        for(PedidosItens pedItem : pedidosItensList) {
+            double valorItem = pedItem.getValorUnitario() * pedItem.getQuantidade();
+            valorTotal += valorItem;
+            System.out.println(pedItem.getValorUnitario());
+
+            pedidosItensResponseDom.add(PedidosItensMapper.pedidosItensToPedidosItensResponseDom(pedItem));
+        }
+
+
+
+        out.setValorTotal(valorTotal - out.getValorDesconto());
+        out.setPedidosItens(pedidosItensResponseDom);
         return out;
     }
 

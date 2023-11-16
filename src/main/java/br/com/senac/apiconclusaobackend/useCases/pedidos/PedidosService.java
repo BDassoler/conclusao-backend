@@ -11,7 +11,7 @@ import java.util.List;
 public interface PedidosService {
 
     List<PedidosResponseDom> carregarPedidos();
-    PedidosResponseDom carregarPedidoById(Long id);
+    PedidosResponseDom carregarPedidoById(Long id) throws SenacException ;
     PedidosResponseDom criarPedido(PedidosRequestDom pedido) throws SenacException;
     PedidosResponseDom atualizarPedido(Long id, PedidosRequestDom pedido) throws SenacException;
     void deletarPedido(Long id);

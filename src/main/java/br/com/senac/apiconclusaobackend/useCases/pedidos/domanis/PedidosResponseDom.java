@@ -13,35 +13,9 @@ public class PedidosResponseDom {
     private float valorDesconto;
     private Long clienteId;
     private Long enderecoId;
-    private Long valortotal;
-
-    public Long getClienteId() {
-        return clienteId;
-    }
-
-    public void setClienteId(Long clienteId) {
-        this.clienteId = clienteId;
-    }
-
-    public Long getEnderecoId() {
-        return enderecoId;
-    }
-
-    public void setEnderecoId(Long enderecoId) {
-        this.enderecoId = enderecoId;
-    }
-
-    private PedidosClienteResponseDom cliente;
-    private PedidosEnderecosResponseDom endereco;
     private List<PedidosItensResponseDom> pedidosItens;
+    private Double valorTotal;
 
-    public List<PedidosItensResponseDom> getPedidosItens() {
-        return pedidosItens;
-    }
-
-    public void setPedidosItens(List<PedidosItensResponseDom> pedidosItens) {
-        this.pedidosItens = pedidosItens;
-    }
 
     public Long getId() {
         return id;
@@ -50,6 +24,7 @@ public class PedidosResponseDom {
     public void setId(Long id) {
         this.id = id;
     }
+
     public LocalDate getDataCriacao() {
         return dataCriacao;
     }
@@ -74,8 +49,36 @@ public class PedidosResponseDom {
         this.valorDesconto = valorDesconto;
     }
 
-    public PedidosClienteResponseDom getCliente() {
-        return cliente;
+    public Long getClienteId() {
+        return clienteId;
     }
 
+    public void setClienteId(Long clienteId) {
+        this.clienteId = clienteId;
+    }
+
+    public Long getEnderecoId() {
+        return enderecoId;
+    }
+
+    public void setEnderecoId(Long enderecoId) {
+        this.enderecoId = enderecoId;
+    }
+
+
+    public List<PedidosItensResponseDom> getPedidosItens() {
+        return pedidosItens;
+    }
+
+    public void setPedidosItens(List<PedidosItensResponseDom> pedidosItens) {
+        this.pedidosItens = pedidosItens;
+    }
+
+    public Double getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(Double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
 }

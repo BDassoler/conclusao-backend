@@ -96,7 +96,6 @@ public class PedidosItensBusinessImpl implements PedidosItensBusiness {
         Optional<PedidosItens> pedidoItemRetorno = pedidosItensRepository.findById(id).map(record -> {
             record.setProduto(produto.get());
             record.setPedido(pedido.get());
-            record.setId(pedidoItem.getId());
             record.setQuantidade(pedidoItem.getQuantidade());
             record.setValorUnitario(pedidoItem.getValorUnitario());
 

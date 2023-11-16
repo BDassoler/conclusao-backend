@@ -33,7 +33,7 @@ public class PedidosController {
 
     @GetMapping("/carregar/{id}")
     @LogRest
-    public ResponseEntity<PedidosResponseDom> carregarProdutoById(@PathVariable Long id){
+    public ResponseEntity<PedidosResponseDom> carregarProdutoById(@PathVariable Long id)throws SenacException {
         return ResponseEntity.ok(pedidosService.carregarPedidoById(id));
     }
 

@@ -77,6 +77,13 @@ public class PedidosItensController {
     @DeleteMapping("/deletar/{id}")
     @LogRest
     public ResponseEntity<Void> deletarPedidoItem(@PathVariable Long id){
+
+        var soma =0;
+        var x1 = 2;
+        var x2 = 3;
+
+        soma = x1 + x2;
+
         pedidosItensService.deletarPedidoItem(id);
 
         return ResponseEntity.ok(null);

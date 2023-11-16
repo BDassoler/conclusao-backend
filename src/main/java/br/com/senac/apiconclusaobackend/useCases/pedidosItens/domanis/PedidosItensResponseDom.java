@@ -1,5 +1,7 @@
 package br.com.senac.apiconclusaobackend.useCases.pedidosItens.domanis;
 
+import br.com.senac.apiconclusaobackend.useCases.produtos.domanis.ProdutosResponseDom;
+
 public class PedidosItensResponseDom {
     private Long id;
     private Long quantidade;

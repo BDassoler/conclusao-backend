@@ -1,6 +1,5 @@
 package br.com.senac.apiconclusaobackend.frameWork.annotions;
 
-import com.google.gson.Gson;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;

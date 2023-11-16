@@ -11,13 +11,10 @@ import br.com.senac.apiconclusaobackend.useCases.clientes.domanis.ClientesRespon
 import br.com.senac.apiconclusaobackend.useCases.clientes.impl.mappers.ClientesMapper;
 import br.com.senac.apiconclusaobackend.useCases.clientes.impl.repositorys.ClientesEnderecosRespository;
 import br.com.senac.apiconclusaobackend.useCases.clientes.impl.repositorys.ClientesRespository;
-import br.com.senac.apiconclusaobackend.useCases.enderecos.impl.EnderecosBusinessImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 

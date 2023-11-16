@@ -3,11 +3,10 @@ package br.com.senac.apiconclusaobackend.controllers;
 import br.com.senac.apiconclusaobackend.frameWork.annotions.LogRest;
 import br.com.senac.apiconclusaobackend.frameWork.utils.ResponseUtil;
 import br.com.senac.apiconclusaobackend.frameWork.utils.SenacException;
-import br.com.senac.apiconclusaobackend.useCases.produtos.ProdutosService;
-import br.com.senac.apiconclusaobackend.useCases.produtos.domanis.ProdutosRequestDom;
-import br.com.senac.apiconclusaobackend.useCases.produtos.domanis.ProdutosResponseDom;
-import br.com.senac.apiconclusaobackend.useCases.produtos.impl.ProdutosServiceImpl;
-import br.com.senac.apiconclusaobackend.useCases.produtos.impl.repositorys.ProdutosRepository;
+import br.com.senac.apiconclusaobackend.useCases.pedidosItens.domanis.PedidosItensRequestDom;
+import br.com.senac.apiconclusaobackend.useCases.pedidosItens.domanis.PedidosItensResponseDom;
+import br.com.senac.apiconclusaobackend.useCases.pedidosItens.impl.PedidosItensServiceImpl;
+import br.com.senac.apiconclusaobackend.useCases.pedidosItens.impl.repositorys.PedidosItensRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,34 +16,34 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("/produtos")
-public class ProdutosController {
+@RequestMapping("/pedidosItens")
+public class PedidosItensController {
 
     @Autowired
-    private ProdutosServiceImpl produtosService;
+    private PedidosItensServiceImpl pedidosItensService;
 
     @Autowired
-    ProdutosRepository produtosRepository;
+    PedidosItensRepository pedidosItensRepository;
 
     @GetMapping(path = "/carregar")
     @LogRest
-    public ResponseEntity<List<ProdutosResponseDom>> carregarProdutos(){
-        return ResponseEntity.ok(produtosService.carregarProdutos());
+    public ResponseEntity<List<PedidosItensResponseDom>> carregarPedidosItens(){
+        return ResponseEntity.ok(pedidosItensService.carregarPedidosItens());
     }
 
     @GetMapping("/carregar/{id}")
     @LogRest
-    public ResponseEntity<ProdutosResponseDom> carregarProdutoById(@PathVariable Long id){
-        return ResponseEntity.ok(produtosService.carregarProdutoById(id));
+    public ResponseEntity<PedidosItensResponseDom> carregarPedidoItemById(@PathVariable Long id){
+        return ResponseEntity.ok(pedidosItensService.carregarPedidoItemById(id));
     }
 
     @PostMapping("/criar")
     @LogRest
-    public ResponseEntity<?> criarProduto
-            (@RequestBody ProdutosRequestDom produtosRequestDom){
+    public ResponseEntity<?> criarPedidoItem
+            (@RequestBody PedidosItensRequestDom pedidosItensRequestDom){
 
         try{
-            return ResponseEntity.status(HttpStatus.CREATED).body(produtosService.criarProdutos(produtosRequestDom));
+            return ResponseEntity.status(HttpStatus.CREATED).body(pedidosItensService.criarPedidoItem(pedidosItensRequestDom));
         } catch (SenacException e) {
             e.printStackTrace();
             return ResponseEntity.badRequest().body(ResponseUtil.responseMapper(e.getMessages()));
@@ -58,12 +57,12 @@ public class ProdutosController {
 
     @PutMapping("/atualizar/{id}")
     @LogRest
-    public ResponseEntity<?> atualizarProduto
+    public ResponseEntity<?> atualizarPedidoItem
             (@PathVariable Long id,
-             @RequestBody ProdutosRequestDom produtosRequestDom){
+             @RequestBody PedidosItensRequestDom pedidosItensRequestDom){
         try {
             return ResponseEntity.ok(
-                    produtosService.atualizarProduto(id, produtosRequestDom));
+                    pedidosItensService.atualizarPedidoItem(id, pedidosItensRequestDom));
         } catch (SenacException e){
             e.printStackTrace();
             return ResponseEntity.badRequest().body(ResponseUtil.responseMapper(e.getMessages()));
@@ -77,8 +76,8 @@ public class ProdutosController {
 
     @DeleteMapping("/deletar/{id}")
     @LogRest
-    public ResponseEntity<Void> deletarProduto(@PathVariable Long id){
-        produtosService.deletarProduto(id);
+    public ResponseEntity<Void> deletarPedidoItem(@PathVariable Long id){
+        pedidosItensService.deletarPedidoItem(id);
 
         return ResponseEntity.ok(null);
     }

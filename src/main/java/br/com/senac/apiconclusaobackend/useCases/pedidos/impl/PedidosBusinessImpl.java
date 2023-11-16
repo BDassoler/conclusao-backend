@@ -54,7 +54,7 @@ public class PedidosBusinessImpl implements PedidosBusiness {
 
         PedidosResponseDom out = PedidosMapper.pedidosTopedidosResponseDom(pedido);
 
-        List<PedidosItensResponseDom> pedItensRespDom = pedidosItensList
+       List<PedidosItensResponseDom> pedItensRespDom = pedidosItensList
                 .stream()
                 .map(PedidosItensMapper::pedidosItensToPedidosItensResponseDom)
                 .collect(Collectors.toList());

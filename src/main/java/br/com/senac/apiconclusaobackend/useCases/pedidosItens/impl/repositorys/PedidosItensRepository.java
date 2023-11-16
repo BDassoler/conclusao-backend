@@ -8,11 +8,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-
 @Repository
 public interface PedidosItensRepository extends JpaRepository<PedidosItens, Long> {
 
-   @Query("Select a from pedido_item a where a.pedido_id =:pedidoId")
-   List<PedidosItens> carregarPedidoItensByPedidoId(@Param("pedidoId") Long pedidoId);
-
+   @Query("Select a from pedidoItem a where a.pedido.id =:pedidoId")
+    List<PedidosItens> carregarPedidoItensByPedidoId(@Param("pedidoId") Long pedidoId);
 }

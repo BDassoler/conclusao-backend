@@ -6,6 +6,7 @@ import org.hibernate.annotations.Where;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity(name = "pedido")
 @SQLDelete(sql = "UPDATE pedido SET deleted_at = now() WHERE id=?")
